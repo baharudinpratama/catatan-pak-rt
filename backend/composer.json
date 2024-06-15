@@ -1,5 +1,5 @@
 {
-    "name": "BEON Test",
+    "title": "BEON Test",
     "type": "project",
     "description": "Build for skill fit test.",
     "keywords": ["framework", "laravel", "test", "work"],
