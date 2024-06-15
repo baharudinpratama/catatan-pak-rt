@@ -20,7 +20,7 @@ class ResidentSeeder extends Seeder
             Resident::create([
                 'name' => $faker->name,
                 'id_card_number' => $faker->nik,
-                'id_card_image' => 'default.jpg',
+                'id_card_image' => null,
                 'phone_number' => $faker->phoneNumber,
                 'marital_status' => $faker->boolean,
                 'active' => $faker->boolean(90),

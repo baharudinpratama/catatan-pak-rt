@@ -18,7 +18,7 @@ class HouseSeeder extends Seeder
             DB::table('houses')->insert([
                 'house_number' => $i,
                 'description' => 'Rumah nyaman 2 kamar tidur dekat pusat kota.',
-                'house_image' => 'default.jpg',
+                'house_image' => null,
                 'active' => true,
                 'created_at' => Date::now(),
                 'updated_at' => Date::now(),

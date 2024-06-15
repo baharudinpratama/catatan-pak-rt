@@ -27,7 +27,7 @@ class House extends Model
         return Attribute::make(
             get: function ($value) {
                 if ($value == null) {
-                    return url('/storage/images/houses/default.jpg');
+                    return url('/images/houses/default.jpg');
                 } else {
                     return url('/storage/images/houses/' . $value);
                 }

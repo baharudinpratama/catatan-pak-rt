@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('id_card_number');
-            $table->string('id_card_image');
+            $table->string('id_card_image')->nullable();
             $table->string('phone_number');
             $table->boolean('marital_status');
             $table->boolean('active');

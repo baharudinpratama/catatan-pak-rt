@@ -26,7 +26,13 @@ class Resident extends Model
     protected function idCardImage(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => url('/storage/images/id-cards/' . $value),
+            get: function ($value) {
+                if ($value == null) {
+                    return url('/storage/images/id-cards/default.jpg');
+                } else {
+                    return url('/storage/images/houses/' . $value);
+                }
+            }
         );
     }
 
