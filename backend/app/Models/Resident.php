@@ -28,7 +28,7 @@ class Resident extends Model
         return Attribute::make(
             get: function ($value) {
                 if ($value == null) {
-                    return url('/storage/images/id-cards/default.jpg');
+                    return url('/images/id-cards/default.jpg');
                 } else {
                     return url('/storage/images/houses/' . $value);
                 }
