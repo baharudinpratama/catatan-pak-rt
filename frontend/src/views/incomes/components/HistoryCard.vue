@@ -1,9 +1,15 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { onMounted, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import api from '../../../api';
 
 const router = useRouter();
+
+const props = defineProps({
+  update: {
+    type: Number
+  }
+});
 
 const fetchDataExpenses = async () => {
   await api.get('/api/maintenance-payments')
@@ -66,6 +72,13 @@ const fetchDataExpenses = async () => {
       toastr.error(error.response.data.message ?? 'Maaf terjadi kesalahan');
     });
 }
+
+watch(
+  () => props.update,
+  () => {
+    fetchDataExpenses();
+  },
+);
 
 onMounted(() => {
   fetchDataExpenses();

@@ -1,10 +1,14 @@
 <script setup>
+import { ref } from 'vue';
 import api from '../../api';
 import HistoryCard from './components/HistoryCard.vue';
+
+const update = ref(0);
 
 const generatePayment = async () => {
   await api.post('/api/maintenance-payments')
     .then(response => {
+      update.value++;
       toastr.success(response.data.message);
     })
     .catch((error) => {
@@ -33,7 +37,7 @@ const generatePayment = async () => {
   <section class="content">
     <div class="col-12">
       <div class="row">
-        <HistoryCard />
+        <HistoryCard :update="update"/>
       </div>
     </div>
   </section>
